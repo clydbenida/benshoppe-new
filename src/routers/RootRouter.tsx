@@ -19,7 +19,15 @@ const rootRouter = createBrowserRouter([
         path: "/sign-up",
         element: <div>Sign-up Page placeholder</div>, 
       },
+      {
+        path: "/cart",
+        element: <div>Cart Page placeholder</div>, 
+      },
     ]
+  },
+  {
+    path: "/seller",
+    element: <div>Cart Page placeholder</div>, 
   },
 ]);
 
