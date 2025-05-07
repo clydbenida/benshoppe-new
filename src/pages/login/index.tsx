@@ -7,8 +7,8 @@ export default function LoginPage () {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     (async function () {
-      setLoading(true);
       try {
         await waitForGigya();
         gigya.accounts.showScreenSet({
@@ -18,18 +18,18 @@ export default function LoginPage () {
             if (!r.response.errorCode) {
               console.log(r.response);
             }
-            console.log("response after submit: ", r.response.user);
+
             const userDetails = r.response.user;
-            await api.request({
-              url: "/user/login",
-              method: "post",
-              data: {
+            await api(
+              "/user/login", 
+              "post",
+              {
                 email: userDetails.email,
                 gigyaUid: userDetails.UID,
                 firstName: userDetails.firstName,
                 lastName: userDetails.lastName,
               }
-            });
+            );
 
             // redirect to `/` 
             window.location.href = "/"

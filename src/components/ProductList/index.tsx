@@ -3,12 +3,10 @@ import useAPI from "../../hooks/useAPI";
 import ProductCard from "../ProductCard";
 
 export default function ProductList() {
-  const [products] = useAPI<ProductType[]>("/products");
-
-  console.log(products)
+  const [products] = useAPI<ProductType[]>("/products", "get");
 
   const renderProductCards = useMemo(
-    () => products?.length ? products?.map(( {_id, name, stock, price, ratings, description, imageUrl} ) => (
+    () => products?.length ? products?.map(({_id, name, stock, price, ratings, description, imageUrl}) => (
       <ProductCard
         _id={_id}
         name={name} 

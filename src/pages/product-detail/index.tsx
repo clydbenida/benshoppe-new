@@ -2,13 +2,17 @@ import { useParams } from "react-router";
 import BaseContainer from "../../components/BaseContainer";
 import useAPI from "../../hooks/useAPI";
 import Button from "../../components/Button";
+import { useCallback } from "react";
 
 export default function ProductDetail() {
   const params = useParams();
 
   const [product] = useAPI<ProductType>(`/products/${params.productId}`);
 
-  console.log(params);
+  const onClickAddToCart = useCallback(async () => {
+    
+  }, []);
+
   return (
     <BaseContainer className="flex my-4">
       <div>

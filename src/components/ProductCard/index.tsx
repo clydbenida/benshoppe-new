@@ -2,7 +2,6 @@ import { Star } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function ProductCard(props: ProductType) {
-  console.log(props)
   return (
     <Link to={`/product/${props._id}`}>
       <div className="border border-gray-200 shadow-xs p-2 rounded-sm">

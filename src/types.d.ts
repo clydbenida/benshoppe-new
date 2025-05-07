@@ -1,3 +1,5 @@
+type ApiMethod = "get" | "post" | "put" | "delete"
+
 interface ReduxCartType {
   items?: Array<CartItemType>
 }
