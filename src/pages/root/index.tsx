@@ -1,9 +1,10 @@
-import Header from "../../components/Header";
+import BaseContainer from "../../components/BaseContainer";
+import ProductList from "../../components/ProductList";
 
 export default function RootPage() {
   return (
-    <>
-      <Header />
-    </>
+    <BaseContainer>
+      <ProductList />
+    </BaseContainer>
   )
 }

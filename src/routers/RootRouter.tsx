@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootPage from '../pages/root';
 import RootLayout from "../layouts/RootLayout";
+import LoginPage from "../pages/login";
+import ProductDetail from "../pages/product-detail";
 
 const rootRouter = createBrowserRouter([
   {
@@ -9,11 +11,11 @@ const rootRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Index Page placeholder</div>, 
+        element: <RootPage />, 
       },
       {
         path: "/login",
-        element: <div>Login Page placeholder</div>, 
+        element: <LoginPage />, 
       },
       {
         path: "/sign-up",
@@ -22,6 +24,10 @@ const rootRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <div>Cart Page placeholder</div>, 
+      },
+      {
+        path: "/product/:productId",
+        element: <ProductDetail />, 
       },
     ]
   },
